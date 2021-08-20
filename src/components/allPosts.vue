@@ -30,13 +30,13 @@ export default {
   created() {
 
     this.$http.get('https://jsonplaceholder.typicode.com/posts').then(function(data){
-      this.posts = data.body.slice(0,20);
+      this.$store.state.posts = data.body.slice(0,20);
     })
   },
 
   computed: {
       filteredPosts() {
-          return this.posts.filter((posts) => {
+          return this.$store.state.posts.filter((posts) => {
               return posts.title.match(this.search);
           })
       }

@@ -7,14 +7,14 @@
 
       <div class="col-1">
         <h3>Това се търси:</h3>
-        <ul v-for="post in posts" :key="post.id">
+        <ul v-for="post in $store.state.posts" :key="post.id">
           <li v-if="post.userId = 1">{{ post.title }}</li>
         </ul>
       </div>
 
       <div class="col-2">
         <h3>Това се предлага:</h3>
-        <ul v-for="post in posts" :key="post.id">
+        <ul v-for="post in $store.state.posts" :key="post.id">
           <li v-if="post.userId = 2">{{ post.title }}</li>
         </ul>
       </div>
@@ -33,15 +33,12 @@ export default {
 
   data() {
     return {
-      posts: [],
+      
     }
   },
 
   created() {
-
-    this.$http.get('https://jsonplaceholder.typicode.com/posts').then(function(data){
-      this.posts = data.body.slice(0,20);
-    })
+    
   },
 
 }
