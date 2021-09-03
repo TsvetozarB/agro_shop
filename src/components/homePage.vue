@@ -76,6 +76,14 @@ export default {
     width: 100%;
   }
 
+  h3 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 5px solid moccasin;
+    padding: 10px;
+    margin: 0px;
+  }
+
   .col-1 ul{
     display: flex;
     flex-direction: column;
@@ -86,8 +94,6 @@ export default {
     list-style-type: none;
   }
 
-  li{
-    text-align: left;
-  }
+  
 
 </style>

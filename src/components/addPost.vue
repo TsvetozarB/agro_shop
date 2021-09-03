@@ -19,7 +19,7 @@
       <button @click.prevent="submitPost">Добави</button> <!-- submit -->
     </div>
     <div v-if="submitted" class="error-text">
-      <p >Благодаря, че добавихте вашата публикация!</p> <!-- Thanks for adding your post -->
+      <p>Благодаря, че добавихте вашата публикация!</p> <!-- Thanks for adding your post -->
     </div>
   </div>
 </template>
@@ -31,7 +31,8 @@ export default {
       postData: {
         title: "",
         content: "",
-        tags: []
+        tags: [],
+        author: ""
       },
       submitted: false,
     }
@@ -106,6 +107,8 @@ export default {
           this.postData.title = "";
           this.postData.content = "";
         });
+
+        this.author = this.$store.state.userData.userName;   // add the author
       }
     }
   }
@@ -180,6 +183,7 @@ export default {
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
   }
 
   .error-text {

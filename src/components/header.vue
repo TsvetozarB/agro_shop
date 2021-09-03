@@ -6,6 +6,7 @@
         <li v-if="$store.state.logedIn"><router-link to="/all-posts">Всички публикации</router-link></li>
     </ul>
     <ul class="login-links">
+      <li v-if="$store.state.logedIn" >{{ $store.state.userData.userName }}</li>
       <li v-if="!$store.state.logedIn"><router-link to="/log-in">Вход</router-link></li>
       <li v-if="$store.state.logedIn" @click="changeStatus"><router-link to="/sign-out">Изход</router-link></li>
     </ul>
@@ -52,6 +53,7 @@ export default {
 
     li {
         display: flex;
+        color: #fff;
     }
 
     a {
